@@ -1,0 +1,19 @@
+[window]
+padding = { x = 10, y = 10 }
+opacity = 0.95
+
+[font]
+size = 14
+
+[font.normal]
+family = "MesloLGS NF"
+
+[colors.primary]
+background = "#1e1e2e"
+foreground = "#cdd6f4"
+
+[cursor]
+style = { shape = "Beam", blinking = "On" }
+
+[terminal.shell]
+program = "/bin/zsh"
