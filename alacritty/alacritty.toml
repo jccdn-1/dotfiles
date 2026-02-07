@@ -1,9 +1,10 @@
 [window]
 padding = { x = 10, y = 10 }
 opacity = 0.95
+option_as_alt = "Both"
 
 [font]
-size = 14
+size = 22
 
 [font.normal]
 family = "MesloLGS NF"
@@ -21,7 +22,4 @@ program = "/bin/zsh"
 [[keyboard.bindings]]
 key = "Return"
 mods = "Shift"
-# chars = "\x1b\r"
-# action = "ReceiveChar"
-# chars = "\n"
 chars = "\u001b\r"
