@@ -17,11 +17,3 @@ style = { shape = "Beam", blinking = "On" }
 
 [terminal.shell]
 program = "/bin/zsh"
-
-[[keyboard.bindings]]
-key = "Return"
-mods = "Shift"
-# chars = "\x1b\r"
-# action = "ReceiveChar"
-# chars = "\n"
-chars = "\u001b\r"

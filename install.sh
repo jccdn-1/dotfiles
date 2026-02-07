@@ -1,5 +1,3 @@
-#!/bin/bash
-
 DOTFILES="$(cd "$(dirname "$0")" && pwd)"
 
 # Cria symlinks
