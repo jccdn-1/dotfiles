@@ -3,13 +3,12 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
+# Path settings
 export PATH="$HOME/.local/bin:$PATH"
+
+# Oh My Zsh
 export ZSH="$HOME/.oh-my-zsh"
-
-# Set theme
 ZSH_THEME="powerlevel10k/powerlevel10k"
-
-# Plugins
 plugins=(
   git
   zsh-autosuggestions
@@ -17,11 +16,18 @@ plugins=(
 )
 source $ZSH/oh-my-zsh.sh
 
+# history setup
+SAVEHIST=1000
+HISTSIZE=1000
+setopt share_history
+setopt hist_expire_dups_first
+setopt hist_ignore_dups
+setopt hist_verify
+
 # Homebrew
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
-
-# FZF
+# --- FZF ---
 export FZF_DEFAULT_COMMAND='fd --type f'
 export FZF_DEFAULT_OPTS="
   --height=40%
@@ -34,6 +40,14 @@ export FZF_DEFAULT_OPTS="
   --preview 'bat --style=numbers --color=always {} || cat {}'
   --bind 'ctrl-y:execute-silent(realpath {} | pbcopy)+abort'
 "
+
+# completion based on history
+bindkey '^[[A' history-search-backward
+bindkey '^[[B' history-search-forward
+
+# ---- Zoxide ----
+eval "$(zoxide init zsh)"
+alias cd="z"
 
 # --- Eza ---
 alias ls="eza -la --icons=always"

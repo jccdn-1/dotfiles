@@ -2,6 +2,8 @@
 padding = { x = 10, y = 10 }
 opacity = 0.95
 option_as_alt = "Both"
+decorations = "buttonless"
+startup_mode = "Maximized"
 
 [font]
 size = 22
