@@ -27,6 +27,8 @@ setopt hist_verify
 # Homebrew
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
+export EDITOR=nvim
+
 # --- FZF ---
 export FZF_DEFAULT_COMMAND='fd --type f'
 export FZF_DEFAULT_OPTS="
