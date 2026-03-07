@@ -1,9 +1,13 @@
 return {
   {
-  "nvim-telescope/telescope.nvim",
-  dependencies = { "nvim-lua/plenary.nvim" },
-  config = function()
-    require("telescope").setup()
-  end,
-}
+    "nvim-treesitter/nvim-treesitter",
+    event = { "BufReadPost", "BufNewFile" },
+    build = ":TSUpdate",
+    config = function()
+      require("nvim-treesitter").setup({
+        highlight = { enable = true },
+        indent = { enable = true },
+      })
+    end,
+  },
 }

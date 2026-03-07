@@ -7,7 +7,7 @@ return {
 			change = { text = "~" },
 			delete = { text = "" },
 			topdelete = { text = "-" },
-			chengedelete = { text = "~" },
+			changedelete = { text = "~" },
 		},
 		current_line_blame = false,
 	},

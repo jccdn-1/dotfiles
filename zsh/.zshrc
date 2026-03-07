@@ -1,8 +1,8 @@
 # Enable Powerlevel10k instant prompt
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
-
+ fi
+# typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
 # Path settings
 export PATH="$HOME/.local/bin:$PATH"
 
@@ -57,3 +57,10 @@ alias ls="eza -la --icons=always"
 # P10k customization
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
+
+# bun completions
+[ -s "/Users/jccdn/.bun/_bun" ] && source "/Users/jccdn/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
