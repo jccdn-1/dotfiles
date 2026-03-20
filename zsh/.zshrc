@@ -64,3 +64,6 @@ alias ls="eza -la --icons=always"
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+
+# opencode
+export PATH=/Users/jccdn/.opencode/bin:$PATH
