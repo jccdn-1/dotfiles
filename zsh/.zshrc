@@ -67,3 +67,4 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 
 # opencode
 export PATH=/Users/jccdn/.opencode/bin:$PATH
+

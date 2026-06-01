@@ -19,6 +19,19 @@ return {
 				},
 			},
 		})
+		vim.api.nvim_create_autocmd({ "CursorHold", "CursorHoldI" }, {
+			callback = function()
+				vim.diagnostic.open_float(nil, {
+					focus = false,
+					close_events = {
+						"BufLeave",
+						"CursorMoved",
+						"InsertEnter",
+						"FocusLost",
+					},
+				})
+			end,
+		})
 
 		local on_attach = function(_, bufnr)
 			local opts = { noremap = true, silent = true, buffer = bufnr }
@@ -31,11 +44,6 @@ return {
 
 		if vim.fn.has("nvim-0.11") == 1 then
 			vim.lsp.config.ts_ls = {
-				capabilities = capabilities,
-				on_attach = on_attach,
-			}
-
-			vim.lsp.config.pyright = {
 				capabilities = capabilities,
 				on_attach = on_attach,
 			}
@@ -76,13 +84,10 @@ return {
 			}
 
 			-- inicia aqui o lsp
-			vim.lsp.enable({ "ts_ls", "eslint", "pyright", "lua_ls" })
+			vim.lsp.enable({ "ts_ls", "eslint", "lua_ls" })
 
 			return
 		end
-
-		-- Fallback para versões antigas (<0.11), se você quiser manter compatibilidade:
-		local lspconfig = require("lspconfig")
 
 		lspconfig.tsserver.setup({
 			capabilities = capabilities,

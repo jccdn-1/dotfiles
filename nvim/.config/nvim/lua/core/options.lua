@@ -15,5 +15,4 @@ opt.splitright = true
 opt.splitbelow = true
 opt.undofile = true
 opt.autoread = true
-opt.updatetime = 500
-
+opt.updatetime = 300
