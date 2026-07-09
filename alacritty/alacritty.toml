@@ -2,18 +2,19 @@
 # padding = { x = 10, y = 10 }
 opacity = 0.95
 option_as_alt = "Both"
-# decorations = "buttonless"
+decorations = "buttonless"
 startup_mode = "Maximized"
 
 [font]
-size = 16
+size = 14
 
 [font.normal]
-family = "MesloLGS NF"
+family = "JetBrainsMono Nerd Font Mono"
+style = "Regular"
 
 [general]
 import = [
-    "~/.config/alacritty/themes/themes/gruvbox_light.toml"
+    "~/.config/alacritty/themes/themes/campbell.toml"
 ]
 
 [cursor]
