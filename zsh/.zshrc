@@ -68,3 +68,17 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 # opencode
 export PATH=/Users/jccdn/.opencode/bin:$PATH
 
+codex() {
+  local root
+
+  root="$(git rev-parse --show-toplevel 2>/dev/null || pwd -P)" || return 1
+
+  safehouse \
+    --workdir="$root" \
+    --append-profile="$HOME/.config/agent-safehouse/privacy.sb" \
+    -- \
+    codex \
+      --cd "$root" \
+      --dangerously-bypass-approvals-and-sandbox \
+      "$@"
+}
